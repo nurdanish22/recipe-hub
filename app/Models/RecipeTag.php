@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class RecipeTag extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'recipe_id',
+        'tag_id'
+    ];
 }
