@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('steps', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('recipe_id')->constrained()->onDelete('cascade'); 
+            $table->integer('step_number'); 
+            $table->text('instruction'); 
+            $table->string('image_url'); 
+            $table->timestamps(); 
         });
     }
 
