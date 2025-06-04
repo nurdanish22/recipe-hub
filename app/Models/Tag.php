@@ -9,6 +9,10 @@ class Tag extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name'
+    ];
+
     public function recipes()
 {
     return $this->belongsToMany(Recipe::class, 'recipe_tags');
