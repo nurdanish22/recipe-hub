@@ -12,8 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bookmarks', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
+            $table->foreignId('recipe_id')->constrained()->onDelete('cascade'); 
+            $table->timestamps(); 
         });
     }
 

@@ -12,9 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('recipes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+            $table->id(); 
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
+            $table->string('title'); 
+            $table->text('description'); 
+            $table->string('category'); 
+            $table->integer('cooking_time'); 
+            $table->integer('preparation_time'); 
+            $table->string('difficulty_level'); 
+            $table->integer('servings'); 
+            $table->string('image_url'); 
+            $table->timestamps(); 
+        }); 
     }
 
     /**
