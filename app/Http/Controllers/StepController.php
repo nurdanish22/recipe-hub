@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RecipeTags;
+use App\Models\Steps;
 use Illuminate\Http\Request;
 
-class RecipeTagsController extends Controller
+class StepController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class RecipeTagsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(RecipeTags $recipeTags)
+    public function show(Steps $steps)
     {
         //
     }
@@ -42,7 +42,7 @@ class RecipeTagsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(RecipeTags $recipeTags)
+    public function edit(Steps $steps)
     {
         //
     }
@@ -50,7 +50,7 @@ class RecipeTagsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, RecipeTags $recipeTags)
+    public function update(Request $request, Steps $steps)
     {
         //
     }
@@ -58,7 +58,7 @@ class RecipeTagsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(RecipeTags $recipeTags)
+    public function destroy(Steps $steps)
     {
         //
     }

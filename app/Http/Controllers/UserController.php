@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Engagements;
+use App\Models\Users;
 use Illuminate\Http\Request;
 
-class EngagementsController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class EngagementsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Engagements $engagements)
+    public function show(Users $users)
     {
         //
     }
@@ -42,7 +42,7 @@ class EngagementsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Engagements $engagements)
+    public function edit(Users $users)
     {
         //
     }
@@ -50,7 +50,7 @@ class EngagementsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Engagements $engagements)
+    public function update(Request $request, Users $users)
     {
         //
     }
@@ -58,7 +58,7 @@ class EngagementsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Engagements $engagements)
+    public function destroy(Users $users)
     {
         //
     }
