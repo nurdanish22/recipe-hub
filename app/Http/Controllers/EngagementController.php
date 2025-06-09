@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Recipes;
+use App\Models\Engagements;
 use Illuminate\Http\Request;
 
-class RecipesController extends Controller
+class EngagementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class RecipesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Recipes $recipes)
+    public function show(Engagements $engagements)
     {
         //
     }
@@ -42,7 +42,7 @@ class RecipesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Recipes $recipes)
+    public function edit(Engagements $engagements)
     {
         //
     }
@@ -50,7 +50,7 @@ class RecipesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Recipes $recipes)
+    public function update(Request $request, Engagements $engagements)
     {
         //
     }
@@ -58,7 +58,7 @@ class RecipesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Recipes $recipes)
+    public function destroy(Engagements $engagements)
     {
         //
     }

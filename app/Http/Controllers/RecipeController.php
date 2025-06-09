@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Steps;
+use App\Models\Recipes;
 use Illuminate\Http\Request;
 
-class StepsController extends Controller
+class RecipeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class StepsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Steps $steps)
+    public function show(Recipes $recipes)
     {
         //
     }
@@ -42,7 +42,7 @@ class StepsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Steps $steps)
+    public function edit(Recipes $recipes)
     {
         //
     }
@@ -50,7 +50,7 @@ class StepsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Steps $steps)
+    public function update(Request $request, Recipes $recipes)
     {
         //
     }
@@ -58,7 +58,7 @@ class StepsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Steps $steps)
+    public function destroy(Recipes $recipes)
     {
         //
     }

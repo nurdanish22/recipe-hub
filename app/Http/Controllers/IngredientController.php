@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comments;
+use App\Models\Ingredients;
 use Illuminate\Http\Request;
 
-class CommentsController extends Controller
+class IngredientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class CommentsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Comments $comments)
+    public function show(Ingredients $ingredients)
     {
         //
     }
@@ -42,7 +42,7 @@ class CommentsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Comments $comments)
+    public function edit(Ingredients $ingredients)
     {
         //
     }
@@ -50,7 +50,7 @@ class CommentsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comments $comments)
+    public function update(Request $request, Ingredients $ingredients)
     {
         //
     }
@@ -58,7 +58,7 @@ class CommentsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Comments $comments)
+    public function destroy(Ingredients $ingredients)
     {
         //
     }
