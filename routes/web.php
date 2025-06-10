@@ -26,9 +26,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Updated dashboard route to use the new dashboard method in RecipeController
+Route::get('/dashboard', [\App\Http\Controllers\RecipeController::class, 'dashboard'])
+    ->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -80,6 +80,9 @@ Route::delete('recipes/{recipe}/bookmarks', [BookmarkController::class, 'destroy
 // Bookmark resource routes for show (if needed)
 Route::get('bookmarks/{bookmark}', [BookmarkController::class, 'show'])->name('bookmarks.show');
 
+// Bookmarks index (list all bookmarks for the logged-in user)
+Route::get('bookmarks', [\App\Http\Controllers\BookmarkController::class, 'index'])->name('bookmarks.index');
+
 // Engagement routes nested under recipes (for viewing or updating engagement stats)
 Route::get('recipes/{recipe}/engagement', [EngagementController::class, 'show'])->name('engagements.show');
 Route::post('recipes/{recipe}/engagement', [EngagementController::class, 'store'])->name('engagements.store');
@@ -89,3 +92,6 @@ Route::put('recipes/{recipe}/engagement', [EngagementController::class, 'update'
 Route::resource('tags', TagController::class);
 // Custom route to show all recipes for a tag
 Route::get('tags/{id}/recipes', [TagController::class, 'recipes'])->name('tags.recipes');
+
+// Recipe search route
+// Route::get('recipes/search', [\App\Http\Controllers\RecipeController::class, 'search'])->name('recipes.search');

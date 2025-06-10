@@ -15,6 +15,20 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    @auth
+                        <x-nav-link :href="route('recipes.index')" :active="request()->routeIs('recipes.index')">
+                            {{ __('Recipes') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('bookmarks.index')" :active="request()->routeIs('bookmarks.index')">
+                            {{ __('My Bookmarks') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('recipes.create')" :active="request()->routeIs('recipes.create')">
+                            {{ __('Add Recipe') }}
+                        </x-nav-link>
+                    @endauth
                 </div>
             </div>
 
@@ -70,6 +84,20 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            @auth
+                <x-responsive-nav-link :href="route('recipes.index')" :active="request()->routeIs('recipes.index')">
+                    {{ __('Recipes') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('bookmarks.index')" :active="request()->routeIs('bookmarks.index')">
+                    {{ __('My Bookmarks') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('recipes.create')" :active="request()->routeIs('recipes.create')">
+                    {{ __('Add Recipe') }}
+                </x-responsive-nav-link>
+            @endauth
         </div>
 
         <!-- Responsive Settings Options -->

@@ -15,28 +15,22 @@
         </div>
     </div>
 
-<div class="mt-10 mx-auto max-w-6xl px-4">
+<div class="mt-10 mx-auto max-w-5xl px-4">
     <h3 class="text-2xl font-bold mb-6 text-gray-800">🍽 Recently Added Recipes</h3>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Recipe Card 1 -->
-        <div class="p-5 bg-orange-100 border border-orange-200 rounded-2xl shadow-md hover:shadow-lg transition">
-            <h4 class="font-semibold text-lg mb-1 text-gray-900">Nasi Goreng Kampung</h4>
-            <p class="text-sm text-gray-700">Simple and spicy village-style fried rice.</p>
-        </div>
-
-        <!-- Recipe Card 2 -->
-        <div class="p-5 bg-green-100 border border-green-200 rounded-2xl shadow-md hover:shadow-lg transition">
-            <h4 class="font-semibold text-lg mb-1 text-gray-900">Pasta Aglio e Olio</h4>
-            <p class="text-sm text-gray-700">Garlic and olive oil pasta, ready in 15 minutes.</p>
-        </div>
-
-        <!-- Recipe Card 3 -->
-        <div class="p-5 bg-blue-100 border border-blue-200 rounded-2xl shadow-md hover:shadow-lg transition">
-            <h4 class="font-semibold text-lg mb-1 text-gray-900">Banana Pancakes</h4>
-            <p class="text-sm text-gray-700">Fluffy, sweet, and perfect for breakfast.</p>
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
+        @foreach($recipes as $recipe)
+            <div class="p-6 bg-white border-2 border-grey-600 rounded-xl shadow-md hover:shadow-lg transition flex flex-col items-start mx-auto w-full max-w-xs mb-6">
+                <h4 class="font-semibold text-lg mb-2 text-gray-900">{{ $recipe->title }}</h4>
+                <p class="text-sm text-gray-700 mb-3 line-clamp-2">{{ $recipe->description }}</p>
+                <a href="{{ route('recipes.show', $recipe->id) }}" class="mt-auto inline-block border-2 bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 rounded">View Recipe</a>
+            </div>
+        @endforeach
     </div>
 </div>
 
 </x-app-layout>
+
+<!--         <div class="p-5 bg-orange-100 border border-orange-200 rounded-2xl shadow-md hover:shadow-lg transition">
+            <h4 class="font-semibold text-lg mb-1 text-gray-900">Nasi Goreng Kampung</h4>
+            <p class="text-sm text-gray-700">Simple and spicy village-style fried rice.</p>
+        </div> -->
