@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RecipeTags;
+use App\Models\RecipeTag;
 use Illuminate\Http\Request;
 
 class RecipeTagController extends Controller
