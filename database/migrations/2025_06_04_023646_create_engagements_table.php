@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('engagements', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('recipe_id')->constrained()->onDelete('cascade'); 
             $table->integer('views_count')->default(0); 
             $table->integer('likes_count')->default(0); 
