@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tags;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
@@ -12,7 +12,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $tags = Tag::all();
+        return view('tags.index', compact('tags'));
     }
 
     /**
@@ -20,7 +21,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        return view('tags.create');
     }
 
     /**
@@ -28,38 +29,63 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:tags,name',
+        ]);
+
+        Tag::create($validated);
+        return redirect()->route('tags.index')->with('success', 'Tag created successfully!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Tags $tags)
+    public function show($id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+        return view('tags.show', compact('tag'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tags $tags)
+    public function edit($id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+        return view('tags.edit', compact('tag'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tags $tags)
+    public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255|unique:tags,name,' . $id,
+        ]);
+
+        $tag = Tag::findOrFail($id);
+        $tag->update($validated);
+
+        return redirect()->route('tags.index')->with('success', 'Tag updated successfully!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tags $tags)
+    public function destroy($id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+        $tag->delete();
+        return redirect()->route('tags.index')->with('success', 'Tag deleted!');
+    }
+
+    /**
+     * Display all recipes associated with the specified tag.
+     */
+    public function recipes($id)
+    {
+        $tag = Tag::with('recipes')->findOrFail($id);
+        return view('tags.recipes', compact('tag'));
     }
 }
