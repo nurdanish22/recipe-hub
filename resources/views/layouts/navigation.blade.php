@@ -28,6 +28,9 @@
                         <x-nav-link :href="route('recipes.create')" :active="request()->routeIs('recipes.create')">
                             {{ __('Add Recipe') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
+                            {{ __('Profile') }}
+                        </x-nav-link>
                     @endauth
                 </div>
             </div>
